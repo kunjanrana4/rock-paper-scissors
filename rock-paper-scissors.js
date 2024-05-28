@@ -1,4 +1,5 @@
 function getChoice(number){
+    //return rock, paper or scissors based on number provided
     return (number === 0) ? "rock" : (number === 1) ? "paper" : "scissors";
 }
 
@@ -10,7 +11,7 @@ function getRandomInt(max) {
 function getComputerChoice() {
     //randomly return "rock", "paper" or "scissors"
     let randomNumber = getRandomInt(3);
-    let computerChoice = (randomNumber === 0) ? "rock" : (randomNumber === 1) ? "paper" : "scissors";
+    let computerChoice = getChoice(randomNumber);
     return computerChoice;
 } 
 
