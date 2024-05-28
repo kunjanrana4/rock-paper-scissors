@@ -20,8 +20,15 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     //ask user for a choice and return it
-    let humanChoice = getChoice(parseInt(prompt("Please enter a number between 0 to 2 to enter your choice.\n 0: rock\n1: paper\n2: scissors")));
-    return humanChoice;
+    let humanChoice;
+    while(humanChoice = parseInt(prompt("Please enter a number between 0 to 2 to enter your choice.\n 0: rock\n1: paper\n2: scissors"))){
+        if(humanChoice >= 0 && humanChoice <= 2) {
+            return getChoice(humanChoice);
+        }
+        else {
+            alert("The input must be a number between 0 and 2.");
+        }
+    }
 }
 
 function pickWinner(choice1, choice2){
@@ -35,7 +42,7 @@ function pickWinner(choice1, choice2){
 }
 
 function playRound(humanChoice, computerChoice) {
-    //kkeps track of winner whether it's computer or human or a tie between both
+    //keeps track of winner whether it's computer or human or a tie between both
     let winner = pickWinner(humanChoice, computerChoice);
     if(winner === "no winner") {
         console.log("It's a tie!");
