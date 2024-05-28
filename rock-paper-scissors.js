@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getChoice(number){
     //return rock, paper or scissors based on number provided
     return (number === 0) ? "rock" : (number === 1) ? "paper" : "scissors";
