@@ -21,7 +21,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     //ask user for a choice and return it
     let humanChoice;
-    while(humanChoice = parseInt(prompt("Please enter a number between 0 to 2 to enter your choice.\n 0: rock\n1: paper\n2: scissors"))){
+    while((humanChoice = parseInt(prompt("Please enter a number between 0 to 2 to enter your choice.\n0: rock\n1: paper\n2: scissors")))!=null){
         if(humanChoice >= 0 && humanChoice <= 2) {
             return getChoice(humanChoice);
         }
