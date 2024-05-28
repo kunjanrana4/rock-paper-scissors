@@ -35,9 +35,9 @@ function pickWinner(choice1, choice2){
     //picks and returns a winners between the two choices
     if(choice1 === choice2) return "no winner";
     switch(choice1) {
-        case "rock" : return (choice2 === "scissors") ? choice1 : choice2;
-        case "paper" : return (choice2 === "rock") ? choice1 : choice2;
-        case "scissors" : return (choice2 === "paper") ? choice1 : choice2;
+        case "Rock" : return (choice2 === "Scissors") ? choice1 : choice2;
+        case "Paper" : return (choice2 === "Rock") ? choice1 : choice2;
+        case "Scissors" : return (choice2 === "Paper") ? choice1 : choice2;
     }
 }
 
