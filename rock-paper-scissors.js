@@ -24,3 +24,30 @@ function getHumanChoice() {
     console.log(humanChoice);
     return humanChoice;
 }
+
+function pickWinner(choice1, choice2){
+    //picks and returns a winners between the two choices
+    if(choice1 === choice2) return "no winner";
+    switch(choice1) {
+        case "rock" : return (choice2 === "scissors") ? choice1 : choice2;
+        case "paper" : return (choice2 === "rock") ? choice1 : choice2;
+        case "scissors" : return (choice2 === "paper") ? choice1 : choice2;
+    }
+}
+
+function playRound(humanChoice, computerChoice) {
+    //kkeps track of winner whether it's computer or human or a tie between both
+    let winner = pickWinner(humanChoice, computerChoice);
+    if(winner === "no winner") {
+        console.log("It's a tie!");
+    }
+    else if (winner === humanChoice) {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+    }
+    else{
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore++;
+    }
+}
+
