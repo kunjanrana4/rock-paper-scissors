@@ -3,7 +3,7 @@ let computerScore = 0;
 
 function getChoice(number){
     //return rock, paper or scissors based on number provided
-    return (number === 0) ? "rock" : (number === 1) ? "paper" : "scissors";
+    return (number === 0) ? "Rock" : (number === 1) ? "Paper" : "Scissors";
 }
 
 function getRandomInt(max) {
@@ -21,7 +21,6 @@ function getComputerChoice() {
 function getHumanChoice() {
     //ask user for a choice and return it
     let humanChoice = getChoice(parseInt(prompt("Please enter a number between 0 to 2 to enter your choice.\n 0: rock\n1: paper\n2: scissors")));
-    console.log(humanChoice);
     return humanChoice;
 }
 
@@ -51,3 +50,27 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function declareWinner() {
+    //declares who won the game
+    if(humanScore > computerScore) {
+        alert(`You won this game by ${humanScore - computerScore} points. Yay!`);
+    }
+    else if(computerScore > humanScore){
+        alert(`You lost this game by ${computerScore - humanScore} points. Better luck next time.`);
+    }
+    else{
+        alert("This game is a tie between you and computer.");
+    }
+}
+
+function playGame() {
+    //play the entire game
+    for(let round = 0; round < 5; round++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+    }
+
+    declareWinner();
+}
