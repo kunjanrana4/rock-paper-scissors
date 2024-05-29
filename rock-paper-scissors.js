@@ -59,15 +59,13 @@ function playRound(humanChoice, computerChoice) {
 
 function declareWinner() {
     //declares who won the game
-    if(humanScore > computerScore) {
-        alert(`You won this game by ${humanScore - computerScore} points. Yay!`);
+    let message = `Player Score: ${humanScore}\nComputerScore: ${computerScore}\n`;
+    if(humanScore == computerScore) {
+        alert(`${message}This game is a tie between you and the computer.`);
+        return;
     }
-    else if(computerScore > humanScore){
-        alert(`You lost this game by ${computerScore - humanScore} points. Better luck next time.`);
-    }
-    else{
-        alert("This game is a tie between you and computer.");
-    }
+    message += `You ${(humanScore > computerScore)?"won":"lost"} this game by ${Math.abs(humanScore - computerScore)} points.`;
+    alert(message);
 }
 
 function playGame() {
@@ -80,4 +78,9 @@ function playGame() {
     }
 
     declareWinner();
+
+    humanScore = 0;
+    computerScore = 0;
 }
+
+playGame();
